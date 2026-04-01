@@ -1,0 +1,101 @@
+# Student Profile — Gap Analysis & University Targeting
+#
+# This file defines the student's current state, target profile, and
+# the weekly bridge plan to close gaps. Updated weekly by teacher agents.
+
+student:
+  name: "Son"
+  age: 13
+  current_grade: 8
+  target_grades: [9, 10, 11, 12]
+  daily_study_minutes: 60
+  study_schedule:
+    monday: { subject: math, minutes: 60 }
+    tuesday: { subject: science, minutes: 60 }
+    wednesday: { subject: english, minutes: 60 }
+    thursday: { subject: math, minutes: 60 }
+    friday: { subject: history, minutes: 60 }
+    saturday: { subject: chinese, minutes: 60 }
+    sunday: rest
+
+# ── Target Exams ────────────────────────────────────────────────────────────
+target_exams:
+  ap:
+    - "AP Calculus AB (Grade 10) → BC (Grade 11)"
+    - "AP Physics 1 (Grade 10) → C: Mechanics (Grade 11)"
+    - "AP Chemistry (Grade 11)"
+    - "AP English Language (Grade 11)"
+    - "AP Computer Science A (Grade 10)"
+    - "AP World History (Grade 10)"
+    - "AP US History (Grade 11)"
+  ib:
+    - "IB Mathematics AA HL"
+    - "IB Physics HL"
+    - "IB English A: Language & Literature HL"
+    - "IB History HL"
+    - "IB Chinese B SL"
+  competitions:
+    - "AMC 10 (Grade 9-10) → AMC 12 (Grade 11-12)"
+    - "SASMO (Singapore & Asian Schools Math Olympiad)"
+    - "AIME (after AMC qualification)"
+    - "Science Olympiad (regional → national)"
+
+# ── University Targets ──────────────────────────────────────────────────────
+university_targets:
+  us_top_20:
+    - { name: "MIT", requirements: "SAT 1550+, 5 APs (5), STEM research, AMC/AIME" }
+    - { name: "Stanford", requirements: "SAT 1550+, 5 APs (5), leadership, unique spike" }
+    - { name: "Caltech", requirements: "SAT 1550+, STEM APs (5), Math Olympiad, research" }
+    - { name: "Harvard", requirements: "SAT 1550+, 5 APs (5), well-rounded, leadership" }
+    - { name: "Princeton", requirements: "SAT 1550+, 5 APs (5), intellectual curiosity" }
+    - { name: "Columbia", requirements: "SAT 1540+, 4+ APs (5), strong essays" }
+    - { name: "UC Berkeley", requirements: "GPA 4.0+, 4+ APs (5), extracurriculars" }
+  uk:
+    - { name: "Oxford", requirements: "A*A*A / IB 39+, MAT/PAT, interview, supercurricular" }
+    - { name: "Cambridge", requirements: "A*A*A / IB 40+, STEP/TMUA, interview" }
+    - { name: "Imperial", requirements: "A*A*A / IB 38+, STEM focus, MAT" }
+    - { name: "UCL", requirements: "A*AA / IB 38+, strong personal statement" }
+  europe:
+    - { name: "ETH Zurich", requirements: "IB 36+ with HL Math/Physics, entrance exam" }
+    - { name: "TU Delft", requirements: "IB 34+, Math HL, English proficiency" }
+    - { name: "EPFL", requirements: "IB 36+, Math + Physics HL, entrance exam" }
+    - { name: "TU Munich", requirements: "IB 34+, strong STEM, German proficiency" }
+
+# ── Current Profile (baseline — to be assessed by teachers) ─────────────────
+current_profile:
+  math:
+    level: "Grade 8 — pre-algebra/algebra I"
+    strengths: []
+    gaps: ["algebraic manipulation fluency", "geometry proofs", "competition problem-solving"]
+    target: "Grade 12 AP Calculus BC + AMC 12 top 5%"
+  science:
+    level: "Grade 8 — general science"
+    strengths: []
+    gaps: ["physics mechanics fundamentals", "chemistry stoichiometry", "lab methodology"]
+    target: "Grade 12 AP Physics C + AP Chemistry"
+  english:
+    level: "Grade 8 — reading/writing"
+    strengths: []
+    gaps: ["rhetorical analysis", "essay structure", "literary criticism"]
+    target: "Grade 11 AP English Language + IB English A HL"
+  chinese:
+    level: "Conversational"
+    strengths: ["spoken fluency"]
+    gaps: ["reading characters", "written composition", "grammar precision"]
+    target: "IB Chinese B SL"
+  history:
+    level: "Grade 8 — basic world history"
+    strengths: []
+    gaps: ["primary source analysis", "essay argumentation", "period knowledge depth"]
+    target: "Grade 11 AP World History + IB History HL"
+
+# ── Bridge Plan (generated weekly by teacher agents) ────────────────────────
+# Each teacher updates their subject section weekly based on progress.
+# Format: week_number → topics → assessment → adjustment
+bridge_plan:
+  week_01:
+    math: "Diagnostic test → identify algebra/geometry baseline"
+    science: "Diagnostic test → physics mechanics baseline"
+    english: "Writing sample → assess essay structure & vocabulary"
+    chinese: "HSK level test → reading/writing baseline"
+    history: "Timeline quiz → assess period knowledge"

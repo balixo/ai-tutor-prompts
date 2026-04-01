@@ -1,0 +1,55 @@
+# Study Schedule & Exam Calendar
+# Aligned with student.yml daily schedule
+
+schedule:
+  daily_minutes: 60
+  weekly:
+    monday: { subject: math, model: "qwen3.5-32b", thinking: true }
+    tuesday: { subject: science, model: "qwen3.5-32b", thinking: true }
+    wednesday: { subject: english, model: "qwen3.5-7b", thinking: false }
+    thursday: { subject: math, model: "qwen3.5-32b", thinking: true }
+    friday: { subject: history, model: "qwen3.5-7b", thinking: false }
+    saturday: { subject: chinese, model: "qwen3.5-7b", thinking: false }
+    sunday: rest
+
+# ── Exam Calendar (approximate dates, varies by year) ───────────────────────
+exam_calendar:
+  grade_9:
+    - { exam: "SASMO", month: "April", prep_weeks: 12 }
+    - { exam: "AMC 10", month: "November", prep_weeks: 16 }
+
+  grade_10:
+    - { exam: "SASMO", month: "April", prep_weeks: 12 }
+    - { exam: "AP World History", month: "May", prep_weeks: 32 }
+    - { exam: "AP Physics 1", month: "May", prep_weeks: 32 }
+    - { exam: "AP Computer Science A", month: "May", prep_weeks: 24 }
+    - { exam: "AMC 10", month: "November", prep_weeks: 16 }
+
+  grade_11:
+    - { exam: "AP Calculus BC", month: "May", prep_weeks: 32 }
+    - { exam: "AP Chemistry", month: "May", prep_weeks: 32 }
+    - { exam: "AP English Language", month: "May", prep_weeks: 32 }
+    - { exam: "AP US History", month: "May", prep_weeks: 32 }
+    - { exam: "AMC 12", month: "November", prep_weeks: 16 }
+    - { exam: "SAT", month: "October/March", prep_weeks: 20 }
+    - { exam: "IB Internal Assessments", month: "March", prep_weeks: 16 }
+
+  grade_12:
+    - { exam: "AP Physics C Mechanics", month: "May", prep_weeks: 32 }
+    - { exam: "AP European History", month: "May", prep_weeks: 32 }
+    - { exam: "IB Exams", month: "May", prep_weeks: 40 }
+    - { exam: "University applications", month: "October-January", prep_weeks: 24 }
+
+# ── Progress Tracking ──────────────────────────────────────────────────────
+tracking:
+  metrics:
+    - accuracy_rate        # % correct on practice problems
+    - time_per_problem     # seconds (for timed exams)
+    - essay_score          # AP rubric (1-6) or IB criteria
+    - character_count      # Chinese: cumulative characters learned
+    - streak_days          # consecutive study days
+
+  thresholds:
+    slow_down: 0.60        # accuracy < 60% → revisit prerequisites
+    on_track: 0.80         # 60-80% → continue current pace
+    advance: 0.90          # > 90% → move to next topic or increase difficulty

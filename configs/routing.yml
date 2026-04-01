@@ -1,0 +1,81 @@
+# AI Tutor — Routing & Model Configuration
+# Determines which model serves each teacher agent based on subject requirements
+
+routing:
+  default_backend: gx10
+  default_model: "qwen3.5-7b"
+
+  agents:
+    math-teacher:
+      backend: gx10
+      model: "qwen3.5-32b"
+      thinking_mode: true
+      context_length: 32768
+      temperature: 0.6
+      top_p: 0.95
+      top_k: 20
+      fallback_backend: desktop
+      fallback_model: "qwen3.5-claude-4.6-opus-q4:9b"
+      reason: "Deep mathematical reasoning requires 32B with thinking mode"
+
+    science-teacher:
+      backend: gx10
+      model: "qwen3.5-32b"
+      thinking_mode: true
+      context_length: 32768
+      temperature: 0.6
+      top_p: 0.95
+      top_k: 20
+      fallback_backend: gx10
+      fallback_model: "qwen3.5-7b"
+      reason: "Physics/chemistry derivations need step-by-step reasoning"
+
+    english-teacher:
+      backend: gx10
+      model: "qwen3.5-7b"
+      thinking_mode: false
+      context_length: 32768
+      temperature: 0.7
+      top_p: 0.8
+      top_k: 20
+      fallback_backend: desktop
+      fallback_model: "qwen3.5-claude-4.6-opus-q4:9b"
+      reason: "Writing feedback is fast and iterative, 7B is sufficient"
+
+    chinese-teacher:
+      backend: gx10
+      model: "qwen3.5-7b"
+      thinking_mode: false
+      context_length: 32768
+      temperature: 0.7
+      top_p: 0.8
+      top_k: 20
+      fallback_backend: minillm
+      fallback_model: "qwen3.5-4b-ollama"
+      reason: "Qwen is natively strong in Chinese at all sizes"
+
+    history-teacher:
+      backend: gx10
+      model: "qwen3.5-7b"
+      thinking_mode: false
+      context_length: 32768
+      temperature: 0.7
+      top_p: 0.8
+      top_k: 20
+      fallback_backend: minillm
+      fallback_model: "qwen3.5-4b-ollama"
+      reason: "Factual recall and essay feedback, speed over depth"
+
+# ── Concurrent Load Estimate ────────────────────────────────────────────────
+# At most 1 teacher active at a time (single student, 60 min sessions).
+# But the GX10 also serves coding agents. Worst case: 1 teacher + 1 coder.
+#
+# Scenario: math (32B) + sr-dev (32B) concurrent:
+#   32B-AWQ weights: 18 GB (shared, same model)
+#   KV cache (2 concurrent, 32K each): ~16 GB
+#   Total: ~34 GB — well within 128 GB
+#
+# Scenario: math (32B, 32K) + architect (32B, 131K) concurrent:
+#   32B-AWQ weights: 18 GB (shared)
+#   KV cache (32K + 131K): ~24 GB
+#   Total: ~42 GB — still fits comfortably
