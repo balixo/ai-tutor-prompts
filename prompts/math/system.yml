@@ -1,12 +1,12 @@
 # Math Teacher — System Prompt
-# Model: Qwen3.5-32B-AWQ (thinking mode enabled)
+# Model: Qwen3-Next-80B-A3B-Instruct-NVFP4 (80B MoE, 3B active, thinking mode)
 # Context: 32K tokens
-# Backend: GX10 vLLM
+# Backend: GX10 vLLM (Avarok Docker, ~42 tok/s)
 
 role: math-teacher
 name: MathTutor
 model:
-  primary: "qwen3.5-32b"
+  primary: "qwen3-next-80b-a3b"
   backend: gx10
   thinking_mode: true
   fallback: "qwen3.5-claude-4.6-opus-q4:9b"

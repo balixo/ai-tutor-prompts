@@ -4,12 +4,12 @@
 schedule:
   daily_minutes: 60
   weekly:
-    monday: { subject: math, model: "qwen3.5-32b", thinking: true }
-    tuesday: { subject: science, model: "qwen3.5-32b", thinking: true }
-    wednesday: { subject: english, model: "qwen3.5-7b", thinking: false }
-    thursday: { subject: math, model: "qwen3.5-32b", thinking: true }
-    friday: { subject: history, model: "qwen3.5-7b", thinking: false }
-    saturday: { subject: chinese, model: "qwen3.5-7b", thinking: false }
+    monday: { subject: math, model: "qwen3-next-80b-a3b", thinking: true }
+    tuesday: { subject: science, model: "qwen3-next-80b-a3b", thinking: true }
+    wednesday: { subject: english, model: "qwen3-next-80b-a3b", thinking: true }
+    thursday: { subject: math, model: "qwen3-next-80b-a3b", thinking: true }
+    friday: { subject: history, model: "qwen3-next-80b-a3b", thinking: true }
+    saturday: { subject: chinese, model: "qwen3-next-80b-a3b", thinking: true }
     sunday: rest
 
 # ── Exam Calendar (approximate dates, varies by year) ───────────────────────

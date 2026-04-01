@@ -8,11 +8,11 @@ top US, UK, and European universities.
 
 ```
 Teacher Agents (5)           Router/LB
-  ├── math-teacher    ──→  GX10 vLLM 32B  (thinking mode, deep reasoning)
-  ├── science-teacher ──→  GX10 vLLM 32B  (thinking mode, experiments)
-  ├── english-teacher ──→  GX10 vLLM 7B   (writing quality, fast feedback)
-  ├── chinese-teacher ──→  GX10 vLLM 7B   (native Qwen strength)
-  └── history-teacher ──→  GX10 vLLM 7B   (factual recall, essay analysis)
+  ├── math-teacher    ──→  GX10 vLLM 80B  (thinking mode, deep reasoning)
+  ├── science-teacher ──→  GX10 vLLM 80B  (thinking mode, experiments)
+  ├── english-teacher ──→  GX10 vLLM 80B  (thinking mode, writing analysis)
+  ├── chinese-teacher ──→  GX10 vLLM 80B  (Qwen-based, native Chinese)
+  └── history-teacher ──→  GX10 vLLM 80B  (thinking mode, source analysis)
 ```
 
 ## Directory Structure
@@ -42,7 +42,6 @@ ai-tutor-prompts/
 ## Inference Backend
 
 All teacher agents run on the GX10 (NVIDIA Blackwell GB10, 128GB) via vLLM:
-- **Math & Science**: Qwen3.5-32B-AWQ with thinking mode (`enable_thinking=True`)
-  for step-by-step proofs and problem solving
-- **English, Chinese, History**: Qwen3.5-7B for fast, high-quality feedback
-- **Fallback**: Desktop Ollama (RTX 5070 Ti, 16GB) for interactive Q&A
+- **All subjects**: Qwen3-Next-80B-A3B-Instruct-NVFP4 (80B MoE, 3B active/token)
+  with thinking mode enabled for all agents (~42 tok/s via Avarok Docker)
+- **Fallback**: Desktop Ollama (RTX 5070 Ti, 16GB) or minillm (qwen3.5-4b)
