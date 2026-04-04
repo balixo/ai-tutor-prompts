@@ -44,4 +44,4 @@ ai-tutor-prompts/
 All teacher agents run on the GX10 (NVIDIA Blackwell GB10, 128GB) via vLLM:
 - **All subjects**: Qwen3-Next-80B-A3B-Instruct-NVFP4 (80B MoE, 3B active/token)
   with thinking mode enabled for all agents (~42 tok/s via Avarok Docker)
-- **Fallback**: Desktop Ollama (RTX 5070 Ti, 16GB) or minillm (qwen3.5-4b)
+- **Fallback**: Desktop Ollama (RTX 5070 Ti, 16GB) or minillm (qwen3-vl:4b-instruct)

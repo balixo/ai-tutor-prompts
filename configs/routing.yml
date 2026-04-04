@@ -53,7 +53,7 @@ routing:
       top_p: 0.8
       top_k: 20
       fallback_backend: minillm
-      fallback_model: "qwen3.5-4b-ollama"
+      fallback_model: "qwen3-vl-4b"
       reason: "Qwen-based model with native Chinese strength, now with reasoning"
 
     history-teacher:
@@ -65,7 +65,7 @@ routing:
       top_p: 0.8
       top_k: 20
       fallback_backend: minillm
-      fallback_model: "qwen3.5-4b-ollama"
+      fallback_model: "qwen3-vl-4b"
       reason: "80B enables deeper source analysis and essay reasoning"
 
 # ── Concurrent Load Estimate ────────────────────────────────────────────────
