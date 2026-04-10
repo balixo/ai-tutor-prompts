@@ -1,0 +1,45 @@
+# Gangadhar — Family AI user profile
+# Used by: RAG memory seed script, Open-WebUI system prompts, agent personalisation
+user:
+  name: Gangadhar
+  email: gangadhar.balikai@gmail.com
+  role: head_of_household
+  qdrant_collection: memory_gangadhar
+  timezone: Asia/Singapore
+
+# ── Professional ────────────────────────────────────────────────────────────
+professional:
+  title: Senior Engineering Leader
+  domain: platform_engineering
+  skills:
+    - distributed systems
+    - Kubernetes
+    - infrastructure automation
+    - Python
+    - Java (learning)
+    - Ansible
+    - GitOps (ArgoCD)
+  communication_style: concise, technical, data-driven
+  current_learning:
+    - Java (core → Spring Boot → algo-trading)
+    - LLM infrastructure (vLLM, RAG, agent orchestration)
+    - quantitative finance
+
+# ── Preferences ─────────────────────────────────────────────────────────────
+preferences:
+  response_style: concise, no fluff, show code/commands first
+  explanation_depth: senior engineer level — skip basics unless asked
+  tools: fish shell, VS Code, aider, Copilot
+  os: Manjaro Linux (workstation), Ubuntu (servers)
+  interests:
+    - homelab infrastructure
+    - self-hosted AI
+    - algo-trading
+    - cycling
+    - reading (technical + sci-fi)
+
+# ── Family Context ──────────────────────────────────────────────────────────
+family:
+  wife: Sameena
+  son: Rishaan (age 13, Grade 8)
+  location: Singapore

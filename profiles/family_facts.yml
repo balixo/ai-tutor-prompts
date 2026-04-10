@@ -1,0 +1,25 @@
+# Family-shared facts — seeded into the family_shared Qdrant collection.
+# These are accessible to all family members in RAG context.
+
+household:
+  - "The Balikai family lives in Singapore"
+  - "Family timezone is Asia/Singapore (SGT, UTC+8)"
+  - "Family members: Gangadhar (father), Sameena (mother), Rishaan (son, age 13)"
+
+routines:
+  - "Rishaan's daily study time is 60 minutes on weekdays"
+  - "Rishaan studies math on Monday and Thursday, science on Tuesday, English on Wednesday, history on Friday, Chinese on Saturday, and rests on Sunday"
+  - "Family uses Open-WebUI as the main AI assistant at home"
+
+education:
+  - "Rishaan is in Grade 8 and targeting top-20 US and UK university admissions"
+  - "Rishaan is preparing for AP exams starting Grade 10 and AMC 10 from Grade 9"
+  - "Key academic targets: SAT 1550+, 5 APs with score 5, AMC/AIME qualification"
+
+infrastructure:
+  - "Home lab runs Kubernetes on 4 nodes: control-plane .66, workers .71 .73 .90"
+  - "TrueNAS SCALE NAS at 192.168.68.72 with 5x18TB RAIDZ2 storage"
+  - "Jetson Orin at 192.168.68.81 runs local AI models (Ollama)"
+  - "Pi-hole provides DNS at 192.168.68.2"
+  - "VPN runs through NordVPN (Singapore) via gluetun on TrueNAS"
+  - "All documents are indexed nightly from Paperless, Kavita, and Immich into Qdrant"

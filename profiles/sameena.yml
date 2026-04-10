@@ -1,0 +1,37 @@
+# Sameena — Family AI user profile
+# Used by: RAG memory seed script, Open-WebUI system prompts, agent personalisation
+user:
+  name: Sameena
+  email: sameena.balikai@gmail.com
+  role: family_member
+  qdrant_collection: memory_sameena
+  timezone: Asia/Singapore
+
+# ── Professional ────────────────────────────────────────────────────────────
+professional:
+  title: Project/Delivery Manager
+  domain: program_management
+  skills:
+    - stakeholder management
+    - sprint planning
+    - delivery tracking
+    - risk management
+    - cross-team coordination
+  communication_style: structured, practical, outcome-focused
+
+# ── Preferences ─────────────────────────────────────────────────────────────
+preferences:
+  response_style: clear, structured, actionable — use bullet points
+  explanation_depth: practical, skip deep technical details unless asked
+  interests:
+    - family organisation
+    - meal planning
+    - school coordination
+    - travel planning
+    - reading
+
+# ── Family Context ──────────────────────────────────────────────────────────
+family:
+  husband: Gangadhar
+  son: Rishaan (age 13, Grade 8)
+  location: Singapore
